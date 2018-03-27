@@ -8,4 +8,8 @@
     <color name="secondaryDarkColor">#320b86</color>
     <color name="primaryTextColor">#000000</color>
     <color name="secondaryTextColor">#ffffff</color>
+    <color name="leaderBoard1">#fff3e0</color>
+    <color name="leaderBoard2">#ffe0b2</color>
+    <color name="leaderBoard3">#ffa726</color>
+
 </resources>

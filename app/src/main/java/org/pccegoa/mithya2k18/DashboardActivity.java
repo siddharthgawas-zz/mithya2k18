@@ -96,11 +96,16 @@ public class DashboardActivity extends AppCompatActivity
 
         } else if (id == R.id.team) {
 
-        } else if (id == R.id.about) {
-
         }
-        else if (id == R.id.developers) {
-
+        else if (id == R.id.about)
+        {
+            Intent intent = new Intent(this,AboutActivity.class);
+            startActivity(intent);
+        }
+        else if (id == R.id.developers)
+        {
+            Intent intent = new Intent(this,DevelopersActivity.class);
+            startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

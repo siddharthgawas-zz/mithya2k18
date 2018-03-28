@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="org.pccegoa.mithya2k18">
 
+
     <application
         android:allowBackup="true"
         android:label="@string/app_name"
@@ -19,11 +20,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <meta-data
             android:name="preloaded_fonts"
-            android:resource="@array/preloaded_fonts"
-            tools:replace="android:value"/>
+            android:resource="@array/preloaded_fonts"/>
 
         <activity android:name=".DeptScore"></activity>
     </application>

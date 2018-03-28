@@ -32,6 +32,14 @@
                 android:id="@+id/nav_send"
                 android:icon="@drawable/ic_menu_send"
                 android:title="Send" />
+            <item
+                android:id="@+id/about"
+                android:icon="@drawable/ic_info_outline_black_24dp"
+                android:title="About"/>
+            <item
+                android:id="@+id/developers"
+                android:icon="@drawable/ic_developer"
+                android:title="Developers"/>
         </menu>
     </item>
 

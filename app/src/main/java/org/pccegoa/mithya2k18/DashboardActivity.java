@@ -1,5 +1,6 @@
 package org.pccegoa.mithya2k18;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -92,6 +93,16 @@ public class DashboardActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_send) {
 
+        }
+        else if (id == R.id.about)
+        {
+            Intent intent = new Intent(this,AboutActivity.class);
+            startActivity(intent);
+        }
+        else if (id == R.id.developers)
+        {
+            Intent intent = new Intent(this,DevelopersActivity.class);
+            startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

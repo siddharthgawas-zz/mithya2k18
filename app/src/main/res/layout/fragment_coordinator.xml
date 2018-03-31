@@ -1,0 +1,496 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="true"
+    android:nestedScrollingEnabled="true">
+    <LinearLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:context="org.pccegoa.mithya2k18.fragment.COORDINATORS">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="COMPUTERS"
+            android:layout_marginTop="10dp"
+            android:textSize="23dp"
+            android:padding="3dp"
+            android:layout_marginLeft="25dp"
+            android:textColor="@color/leaderBoard3"/>
+        <!-- TODO: Update blank fragment layout -->
+        <android.support.v7.widget.CardView
+            android:layout_width="310dp"
+            android:layout_height="170dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="5dp"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <ImageView
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="25dp"
+                    android:id="@+id/comp1_pic"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_alignStart="@+id/call_comp1"
+                    android:layout_marginTop="50dp"
+                    android:text="GLEN D'SOUZA"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
+                    android:textSize="12dp" />
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:id="@+id/call_comp1"
+                    android:layout_toRightOf="@id/comp1_pic"
+                    android:layout_marginTop="105dp"
+                    android:layout_marginLeft="30dp"
+                    android:src="@drawable/phone"
+                    android:clickable="true"
+
+                    />
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:id="@+id/insta_comp1"
+                    android:layout_toRightOf="@id/call_comp1"
+                    android:layout_marginTop="105dp"
+                    android:layout_marginLeft="30dp"
+                    android:src="@drawable/instagram"
+                    android:clickable="true"
+                    />
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="310dp"
+            android:layout_height="170dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="20dp"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <ImageView
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="25dp"
+                    android:id="@+id/comp2_pic"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_alignStart="@+id/call_comp2"
+                    android:layout_marginTop="50dp"
+                    android:text="ETHAN ALBERTO"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
+                    android:textSize="12dp" />
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:id="@+id/call_comp2"
+                    android:layout_toRightOf="@id/comp2_pic"
+                    android:layout_marginTop="105dp"
+                    android:layout_marginLeft="30dp"
+                    android:src="@drawable/phone"
+                    android:clickable="true"
+
+                    />
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:id="@+id/insta_comp2"
+                    android:layout_toRightOf="@id/call_comp2"
+                    android:layout_marginTop="105dp"
+                    android:layout_marginLeft="30dp"
+                    android:src="@drawable/instagram"
+                    android:clickable="true"
+                    />
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ETC"
+            android:layout_marginTop="10dp"
+            android:textSize="23dp"
+            android:padding="3dp"
+            android:layout_marginLeft="25dp"
+            android:textColor="@color/leaderBoard3"/>
+        <!-- TODO: Update blank fragment layout -->
+        <android.support.v7.widget.CardView
+            android:layout_width="310dp"
+            android:layout_height="170dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="5dp"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <ImageView
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="25dp"
+                    android:id="@+id/etc1_pic"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_alignStart="@+id/call_etc1"
+                    android:layout_marginTop="50dp"
+                    android:text="ROYSTON PEREIRA"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
+                    android:textSize="12dp" />
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:id="@+id/call_etc1"
+                    android:layout_toRightOf="@id/etc1_pic"
+                    android:layout_marginTop="105dp"
+                    android:layout_marginLeft="30dp"
+                    android:src="@drawable/phone"
+                    android:clickable="true"
+
+                    />
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:id="@+id/insta_etc1"
+                    android:layout_toRightOf="@id/call_etc1"
+                    android:layout_marginTop="105dp"
+                    android:layout_marginLeft="30dp"
+                    android:src="@drawable/instagram"
+                    android:clickable="true"
+                    />
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="310dp"
+            android:layout_height="170dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="20dp"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <ImageView
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="25dp"
+                    android:id="@+id/etc2_pic"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_alignStart="@+id/call_etc2"
+                    android:layout_marginTop="50dp"
+                    android:text="DIVYA SHETTIGAR"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
+                    android:textSize="12dp" />
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:id="@+id/call_etc2"
+                    android:layout_toRightOf="@id/etc2_pic"
+                    android:layout_marginTop="105dp"
+                    android:layout_marginLeft="30dp"
+                    android:src="@drawable/phone"
+                    android:clickable="true"
+
+                    />
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:id="@+id/insta_etc2"
+                    android:layout_toRightOf="@id/call_etc2"
+                    android:layout_marginTop="105dp"
+                    android:layout_marginLeft="30dp"
+                    android:src="@drawable/instagram"
+                    android:clickable="true"
+                    />
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="IT"
+            android:layout_marginTop="10dp"
+            android:textSize="23dp"
+            android:padding="3dp"
+            android:layout_marginLeft="25dp"
+            android:textColor="@color/leaderBoard3"/>
+        <!-- TODO: Update blank fragment layout -->
+        <android.support.v7.widget.CardView
+            android:layout_width="310dp"
+            android:layout_height="170dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="5dp"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <ImageView
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="25dp"
+                    android:id="@+id/it1_pic"
+                   />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_alignStart="@+id/call_it1"
+                    android:layout_marginTop="50dp"
+                    android:text="SNIVIO BRAGANZA"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
+                    android:textSize="12dp" />
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:id="@+id/call_it1"
+                    android:layout_toRightOf="@id/it1_pic"
+                    android:layout_marginTop="105dp"
+                    android:layout_marginLeft="30dp"
+                    android:src="@drawable/phone"
+                    android:clickable="true"
+
+                    />
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:id="@+id/insta_it1"
+                    android:layout_toRightOf="@id/call_it1"
+                    android:layout_marginTop="105dp"
+                    android:layout_marginLeft="30dp"
+                    android:src="@drawable/instagram"
+                    android:clickable="true"
+                    />
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="310dp"
+            android:layout_height="170dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="20dp"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <ImageView
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="25dp"
+                    android:id="@+id/it2_pic"
+            />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_alignStart="@+id/call_it2"
+                    android:layout_marginTop="50dp"
+                    android:text="BISWAS TIWARI"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
+                    android:textSize="12dp" />
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:id="@+id/call_it2"
+                    android:layout_toRightOf="@id/it2_pic"
+                    android:layout_marginTop="105dp"
+                    android:layout_marginLeft="30dp"
+                    android:src="@drawable/phone"
+                    android:clickable="true"
+
+                    />
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:id="@+id/insta_it2"
+                    android:layout_toRightOf="@id/call_it2"
+                    android:layout_marginTop="105dp"
+                    android:layout_marginLeft="30dp"
+                    android:src="@drawable/instagram"
+                    android:clickable="true"
+                    />
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MECHANICAL"
+            android:layout_marginTop="10dp"
+            android:textSize="23dp"
+            android:padding="3dp"
+            android:layout_marginLeft="25dp"
+            android:textColor="@color/leaderBoard3"/>
+        <!-- TODO: Update blank fragment layout -->
+        <android.support.v7.widget.CardView
+            android:layout_width="310dp"
+            android:layout_height="170dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="5dp"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <ImageView
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="25dp"
+                    android:id="@+id/mech1_pic"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_alignStart="@+id/call_mech1"
+                    android:layout_marginTop="50dp"
+                    android:text="SAURABH PARRIKAR"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
+                    android:textSize="12dp" />
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:id="@+id/call_mech1"
+                    android:layout_toRightOf="@id/mech1_pic"
+                    android:layout_marginTop="105dp"
+                    android:layout_marginLeft="30dp"
+                    android:src="@drawable/phone"
+                    android:clickable="true"
+
+                    />
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:id="@+id/insta_mech1"
+                    android:layout_toRightOf="@id/call_mech1"
+                    android:layout_marginTop="105dp"
+                    android:layout_marginLeft="30dp"
+                    android:src="@drawable/instagram"
+                    android:clickable="true"
+                    />
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="310dp"
+            android:layout_height="170dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <ImageView
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="25dp"
+                    android:id="@+id/mech2_pic"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_alignStart="@+id/call_mech2"
+                    android:layout_marginTop="50dp"
+                    android:text="DIKSHAY GOLATKAR"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
+                    android:textSize="12dp" />
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:id="@+id/call_mech2"
+                    android:layout_toRightOf="@id/mech2_pic"
+                    android:layout_marginTop="105dp"
+                    android:layout_marginLeft="30dp"
+                    android:src="@drawable/phone"
+                    android:clickable="true"
+
+                    />
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:id="@+id/insta_mech2"
+                    android:layout_toRightOf="@id/call_mech2"
+                    android:layout_marginTop="105dp"
+                    android:layout_marginLeft="30dp"
+                    android:src="@drawable/instagram"
+                    android:clickable="true"
+                    />
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+
+
+
+    </LinearLayout>
+</ScrollView>

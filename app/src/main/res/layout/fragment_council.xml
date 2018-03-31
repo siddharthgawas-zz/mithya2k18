@@ -1,0 +1,389 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="true"
+    android:nestedScrollingEnabled="true">
+<LinearLayout
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context="org.pccegoa.mithya2k18.fragment.COUNCIL">
+
+
+    <!-- TODO: Update blank fragment layout -->
+    <android.support.v7.widget.CardView
+        android:layout_width="310dp"
+        android:layout_height="200dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="20dp"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="General Secretary"
+                android:textSize="23dp"
+                android:padding="5dp"
+                android:layout_marginLeft="25dp"
+                android:textColor="@color/leaderBoard3"/>
+
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="60dp"
+                android:id="@+id/gs_pic"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_toRightOf="@id/gs_pic"
+                android:text="OMKAR DHOND"
+                android:textSize="12dp"
+                android:layout_marginTop="80dp"
+                android:layout_marginLeft="30dp"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
+                />
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:id="@+id/call_gs"
+                android:layout_toRightOf="@id/gs_pic"
+                android:layout_marginTop="135dp"
+                android:layout_marginLeft="30dp"
+                android:src="@drawable/phone"
+                android:clickable="true"
+
+                />
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:id="@+id/insta_gs"
+                android:layout_toRightOf="@id/call_gs"
+                android:layout_marginTop="135dp"
+                android:layout_marginLeft="30dp"
+                android:src="@drawable/instagram"
+                android:clickable="true"
+
+                />
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="310dp"
+        android:layout_height="200dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="20dp"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="Ladies Representative"
+                android:textSize="23dp"
+                android:padding="5dp"
+                android:layout_marginLeft="25dp"
+                android:textColor="@color/leaderBoard3"/>
+
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="60dp"
+                android:id="@+id/lr_pic"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_toRightOf="@id/lr_pic"
+                android:text="SANAA KHATIB"
+                android:textSize="12dp"
+                android:layout_marginTop="80dp"
+                android:layout_marginLeft="30dp"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
+                />
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:id="@+id/call_lr"
+                android:layout_toRightOf="@id/lr_pic"
+                android:layout_marginTop="135dp"
+                android:layout_marginLeft="30dp"
+                android:src="@drawable/phone"
+                android:clickable="true"
+                />
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:id="@+id/insta_lr"
+                android:layout_toRightOf="@id/call_lr"
+                android:layout_marginTop="135dp"
+                android:layout_marginLeft="30dp"
+                android:src="@drawable/instagram"
+                android:clickable="true"/>
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+    <android.support.v7.widget.CardView
+        android:layout_width="310dp"
+        android:layout_height="200dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="20dp"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="University Representative"
+                android:textSize="23dp"
+                android:padding="5dp"
+                android:layout_marginLeft="25dp"
+                android:textColor="@color/leaderBoard3"/>
+
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="60dp"
+                android:id="@+id/ur_pic"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_toRightOf="@id/ur_pic"
+                android:text="NEERAJ KAMAT"
+                android:textSize="12dp"
+                android:layout_marginTop="80dp"
+                android:layout_marginLeft="30dp"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
+                />
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:id="@+id/call_ur"
+                android:layout_toRightOf="@id/ur_pic"
+                android:layout_marginTop="135dp"
+                android:layout_marginLeft="30dp"
+                android:src="@drawable/phone"
+                android:clickable="true"
+
+                />
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:id="@+id/insta_ur"
+                android:layout_toRightOf="@id/call_ur"
+                android:layout_marginTop="135dp"
+                android:layout_marginLeft="30dp"
+                android:src="@drawable/instagram"
+                android:clickable="true"/>
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="310dp"
+        android:layout_height="200dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="20dp"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="Cultural Secretary"
+                android:textSize="23dp"
+                android:padding="5dp"
+                android:layout_marginLeft="25dp"
+                android:textColor="@color/leaderBoard3"/>
+
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="60dp"
+                android:id="@+id/cs_pic"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_toRightOf="@id/cs_pic"
+                android:text="SAYAED HAWALDAR"
+                android:textSize="12dp"
+                android:layout_marginTop="80dp"
+                android:layout_marginLeft="30dp"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
+                />
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:id="@+id/call_cs"
+                android:layout_toRightOf="@id/cs_pic"
+                android:layout_marginTop="135dp"
+                android:layout_marginLeft="30dp"
+                android:src="@drawable/phone"
+                android:clickable="true"
+
+                />
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:id="@+id/insta_cs"
+                android:layout_toRightOf="@id/call_cs"
+                android:layout_marginTop="135dp"
+                android:layout_marginLeft="30dp"
+                android:src="@drawable/instagram"
+                android:clickable="true"/>
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="310dp"
+        android:layout_height="200dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="20dp"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="Sports Secretary"
+                android:textSize="23dp"
+                android:padding="5dp"
+                android:layout_marginLeft="25dp"
+                android:textColor="@color/leaderBoard3"/>
+
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="60dp"
+                android:id="@+id/ss_pic"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_toRightOf="@id/ss_pic"
+                android:text="PRANAV SHIRODKAR"
+                android:textSize="12dp"
+                android:layout_marginTop="80dp"
+                android:layout_marginLeft="30dp"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
+                />
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:id="@+id/call_ss"
+                android:layout_toRightOf="@id/ss_pic"
+                android:layout_marginTop="135dp"
+                android:layout_marginLeft="30dp"
+                android:src="@drawable/phone"
+                android:clickable="true"
+
+                />
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:id="@+id/insta_ss"
+                android:layout_toRightOf="@id/call_ss"
+                android:layout_marginTop="135dp"
+                android:layout_marginLeft="30dp"
+                android:src="@drawable/instagram"
+                android:clickable="true"/>
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="310dp"
+        android:layout_height="200dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="Magazine Secretary"
+                android:textSize="23dp"
+                android:padding="5dp"
+                android:layout_marginLeft="25dp"
+                android:textColor="@color/leaderBoard3"/>
+
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="60dp"
+                android:id="@+id/ms_pic"
+            />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_toRightOf="@id/ms_pic"
+                android:text="RISHIKESH AROLKAR"
+                android:textSize="12dp"
+                android:layout_marginTop="80dp"
+                android:layout_marginLeft="30dp"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
+                />
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:id="@+id/call_ms"
+                android:layout_toRightOf="@id/ms_pic"
+                android:layout_marginTop="135dp"
+                android:layout_marginLeft="30dp"
+                android:src="@drawable/phone"
+                android:clickable="true"
+
+                />
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:id="@+id/insta_ms"
+                android:layout_toRightOf="@id/call_ms"
+                android:layout_marginTop="135dp"
+                android:layout_marginLeft="30dp"
+                android:src="@drawable/instagram"
+                android:clickable="true"/>
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+</LinearLayout>
+</ScrollView>

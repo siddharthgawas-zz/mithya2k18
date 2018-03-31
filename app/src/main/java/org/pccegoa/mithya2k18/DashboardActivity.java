@@ -46,6 +46,12 @@ public class DashboardActivity extends AppCompatActivity
         startActivity(scorebutton);
     }
 
+    public void onScheduleClick(View view)
+    {
+        Intent schedulebutton=new Intent(this,ScheduleActivity.class);
+        startActivity(schedulebutton);
+    }
+
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -85,16 +91,21 @@ public class DashboardActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.home) {
-            // Handle the camera action
+            Intent intent = new Intent(this,DashboardActivity.class);
+            startActivity(intent);
         } else if (id == R.id.events) {
 
         } else if (id == R.id.schedule) {
+            Intent intent = new Intent(this,ScheduleActivity.class);
+            startActivity(intent);
 
         } else if (id == R.id.score) {
             Intent score=new Intent(this,DeptScore.class);
             startActivity(score);
 
         } else if (id == R.id.team) {
+            Intent intent = new Intent(this,TeamActivity.class);
+            startActivity(intent);
 
         }
         else if (id == R.id.about)

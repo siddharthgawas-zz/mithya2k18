@@ -1,4 +1,4 @@
-package org.pccegoa.mithya2k18.fragments;
+package org.pccegoa.mithya2k18.fragment;
 
 import android.app.Dialog;
 import android.os.Bundle;

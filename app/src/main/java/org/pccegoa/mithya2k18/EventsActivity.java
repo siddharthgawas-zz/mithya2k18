@@ -9,7 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 
-import org.pccegoa.mithya2k18.fragments.EventFragment;
+import org.pccegoa.mithya2k18.fragment.EventFragment;
 
 public class EventsActivity extends AppCompatActivity {
 

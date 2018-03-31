@@ -19,7 +19,7 @@ public class DevelopersActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_developers);
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar1);
         toolbar.setTitleTextColor(getResources().getColor(R.color.secondaryTextColor));
         toolbar.setTitle("Developer's Page");
         setSupportActionBar(toolbar);

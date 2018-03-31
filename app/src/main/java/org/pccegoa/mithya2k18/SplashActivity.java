@@ -14,6 +14,8 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.google.firebase.database.FirebaseDatabase;
+
 public class SplashActivity extends AppCompatActivity implements Animator.AnimatorListener {
 
     private ImageView mLogoImageView = null;
@@ -25,7 +27,6 @@ public class SplashActivity extends AppCompatActivity implements Animator.Animat
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_splash);
-
         mLogoImageView = findViewById(R.id.logoImageView);
         mProgressBar = findViewById(R.id.progressBar);
         setUpAlphaAnimation();

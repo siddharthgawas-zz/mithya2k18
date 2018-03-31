@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="org.pccegoa.mithya2k18">
 
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -30,19 +31,22 @@
         <activity
             android:name=".AboutActivity"
             android:exported="true"
-            android:parentActivityName=".DashboardActivity">
+            android:parentActivityName=".DashboardActivity"></activity>
+        <activity
+            android:name=".DevelopersActivity"
+            android:exported="true"
+            android:parentActivityName=".DashboardActivity"></activity>
 
-        </activity>
-        <activity android:name=".DevelopersActivity"
-            android:parentActivityName=".DashboardActivity"
-            android:exported="true">
-
-        </activity>
         <meta-data
             android:name="preloaded_fonts"
-            android:resource="@array/preloaded_fonts"/>
+            android:resource="@array/preloaded_fonts" />
 
-        <activity android:name=".DeptScore"></activity>
+        <activity android:name=".DeptScore" >
+
+        </activity>
+        <activity android:name=".EventsActivity"
+            android:exported="true"
+            android:parentActivityName=".DashboardActivity">></activity>
     </application>
 
 </manifest>

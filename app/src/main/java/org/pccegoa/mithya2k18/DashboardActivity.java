@@ -2,8 +2,7 @@ package org.pccegoa.mithya2k18;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
+import android.util.Pair;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -11,22 +10,49 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+
+import org.pccegoa.mithya2k18.utility.ScoreCounter;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 public class DashboardActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener ,
+        ValueEventListener, View.OnClickListener{
 
+    private DatabaseReference mDatabase = null;
+    private ImageView firstImageView = null;
+    private ImageView secondImageView = null;
+    private ImageView thirdImageView = null;
+    private ImageView lastImageView = null;
         ImageView scoreButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        mDatabase = FirebaseDatabase.getInstance()
+                .getReference("events");
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar1);
         setSupportActionBar(toolbar);
-        
 
+
+        mDatabase.addValueEventListener(this);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -38,12 +64,32 @@ public class DashboardActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        firstImageView = findViewById(R.id.firstPositionImageView);
+        secondImageView = findViewById(R.id.secondPositionImageView);
+        thirdImageView = findViewById(R.id.thirdPositionImageView);
+        lastImageView = findViewById(R.id.lastPositionImageView);
+
+        ImageView imageView = findViewById(R.id.schedulePic);
+        imageView.setOnClickListener(this);
+        imageView = findViewById(R.id.eventsPic);
+        imageView.setOnClickListener(this);
     }
 
-    public void onScoreClick(View view)
-    {
-        Intent scorebutton=new Intent(this,DeptScore.class);
-        startActivity(scorebutton);
+    @Override
+    public void onClick(View v) {
+        int id = v.getId();
+        switch (id)
+        {
+            case R.id.eventsPic:
+                Intent i = new Intent(this,EventsActivity.class);
+                startActivity(i);
+                break;
+            case R.id.schedulePic:
+                break;
+            default:
+                break;
+        }
     }
 
     @Override
@@ -56,27 +102,6 @@ public class DashboardActivity extends AppCompatActivity
         }
     }
 
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        // Inflate the menu; this adds items to the action bar if it is present.
-//        getMenuInflater().inflate(R.menu.dashboard, menu);
-//        return true;
-//    }
-
-//    @Override
-////    public boolean onOptionsItemSelected(MenuItem item) {
-////        // Handle action bar item clicks here. The action bar will
-////        // automatically handle clicks on the Home/Up button, so long
-////        // as you specify a parent activity in AndroidManifest.xml.
-////        int id = item.getItemId();
-////
-////        //noinspection SimplifiableIfStatement
-////        if (id == R.id.action_settings) {
-////            return true;
-////        }
-////
-////        return super.onOptionsItemSelected(item);
-////    }
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
@@ -87,8 +112,11 @@ public class DashboardActivity extends AppCompatActivity
         if (id == R.id.home) {
             // Handle the camera action
         } else if (id == R.id.events) {
+            Intent i = new Intent(this,EventsActivity.class);
+            startActivity(i);
 
         } else if (id == R.id.schedule) {
+
 
         } else if (id == R.id.score) {
             Intent score=new Intent(this,DeptScore.class);
@@ -111,5 +139,111 @@ public class DashboardActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    public void onDataChange(DataSnapshot dataSnapshot) {
+
+
+        Iterable<DataSnapshot> iterable  = dataSnapshot.getChildren();
+        List<Map<String,Object>> events = new ArrayList<>();
+        for(DataSnapshot s:iterable)
+        {
+            String key = s.getKey();
+            Map<String, Object> event = (Map<String, Object> )s.getValue();
+            events.add(event);
+        }
+
+        ScoreCounter counter = new ScoreCounter();
+        counter.setEvents(events);
+        int compScore = counter.getTotalScoreOf(ScoreCounter.CE);
+        int mechScore = counter.getTotalScoreOf(ScoreCounter.ME);
+        int itScore = counter.getTotalScoreOf(ScoreCounter.IT);
+        int etcScore = counter.getTotalScoreOf(ScoreCounter.ETC);
+        setPositions(compScore,mechScore,itScore,etcScore);
+        handleSameScoreSituation();
+
+    }
+
+    private void setPositions(int comp, int mech, int it, int etc)
+    {
+        if(comp == 0 && mech == 0 && it == 0 && etc == 0)
+        {
+            firstImageView.setVisibility(View.GONE);
+           secondImageView.setVisibility(View.GONE);
+            thirdImageView.setVisibility(View.GONE);
+            lastImageView.setVisibility(View.GONE);
+            return;
+        }
+        firstImageView.setVisibility(View.VISIBLE);
+        secondImageView.setVisibility(View.VISIBLE);
+        thirdImageView.setVisibility(View.VISIBLE);
+        lastImageView.setVisibility(View.VISIBLE);
+
+        ArrayList<Pair<String,Integer>> scores = new ArrayList<>();
+        scores.add(new Pair<String, Integer>("COMP",comp));
+        scores.add(new Pair<String, Integer>("MECH",mech));
+        scores.add(new Pair<String, Integer>("IT",it));
+        scores.add(new Pair<String, Integer>("ETC",etc));
+
+       Pair<String,Integer> score = getMaxScore(scores);
+       scores.remove(score);
+       TextView placeTextView = findViewById(R.id.firstPlace);
+       TextView scoreTextView = findViewById(R.id.firstScore);
+       placeTextView.setText(score.first);
+       scoreTextView.setText(score.second+"");
+
+        score = getMaxScore(scores);
+        scores.remove(score);
+        placeTextView = findViewById(R.id.secondPlace);
+        scoreTextView = findViewById(R.id.secondScore);
+        placeTextView.setText(score.first);
+        scoreTextView.setText(score.second+"");
+
+        score = getMaxScore(scores);
+        scores.remove(score);
+        placeTextView = findViewById(R.id.thirdPlace);
+        scoreTextView = findViewById(R.id.thirdScore);
+        placeTextView.setText(score.first);
+        scoreTextView.setText(score.second+"");
+
+        score = getMaxScore(scores);
+        scores.remove(score);
+        placeTextView = findViewById(R.id.forthPlace);
+        scoreTextView = findViewById(R.id.forthScore);
+        placeTextView.setText(score.first);
+        scoreTextView.setText(score.second+"");
+
+    }
+
+    private void handleSameScoreSituation()
+    {
+        int[] textViewInts = {R.id.firstScore,R.id.secondScore,R.id.thirdScore,R.id.forthScore};
+        int[] imageViews = {R.id.firstPositionImageView,R.id.secondPositionImageView,
+        R.id.thirdPositionImageView,R.id.lastPositionImageView};
+        for (int i = 1; i <4;i++)
+        {
+            TextView t1 = findViewById(textViewInts[i]);
+            TextView t2 = findViewById(textViewInts[i-1]);
+            if(t1.getText().equals(t2.getText()))
+            {
+                ImageView imageView = findViewById(imageViews[i]);
+                imageView.setVisibility(View.INVISIBLE);
+            }
+        }
+    }
+    private Pair<String, Integer> getMaxScore( ArrayList<Pair<String,Integer>> scores)
+    {
+        int max = 0;
+        for(int i = 0; i < scores.size();i++)
+        {
+            if(scores.get(i).second > scores.get(max).second)
+                max = i;
+        }
+        return scores.get(max);
+    }
+    @Override
+    public void onCancelled(DatabaseError databaseError) {
+        Toast.makeText(this, "Error Occurred", Toast.LENGTH_SHORT).show();
     }
 }

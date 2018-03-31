@@ -28,7 +28,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.386" />
 
-    <ImageView
+
+    <ImageButton
         android:id="@+id/schedulePic"
         android:layout_width="264dp"
         android:layout_height="252dp"
@@ -36,33 +37,41 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="32dp"
+        android:background="@android:color/transparent"
+        android:clickable="true"
+        android:focusable="true"
+        android:scaleType="centerInside"
         android:src="@drawable/icon1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/icon1" />
 
-
-    <ImageView
+    <ImageButton
+        android:id="@+id/ScorePic"
         android:layout_width="153dp"
         android:layout_height="137dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="32dp"
+        android:background="@android:color/transparent"
+        android:clickable="true"
+        android:focusable="true"
+        android:scaleType="centerInside"
         android:src="@drawable/icon2"
-        android:id="@+id/ScorePic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.265"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.494"
-        />
+        app:srcCompat="@drawable/icon2" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/eventsPic"
         android:layout_width="199dp"
         android:layout_height="206dp"
@@ -70,15 +79,18 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="32dp"
+        android:background="@android:color/transparent"
         android:clickable="true"
-        android:onClick="onScoreClick"
+        android:focusable="true"
+        android:scaleType="centerInside"
         android:src="@drawable/icon3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.306" />
+        app:layout_constraintVertical_bias="0.306"
+        app:srcCompat="@drawable/icon3" />
 
     <LinearLayout
         android:id="@+id/leaderboard"
@@ -158,8 +170,13 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp" />
+                android:id="@+id/firstPositionImageView"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:scaleType="fitCenter"
+                android:visibility="gone"
+                app:srcCompat="@drawable/ic_first_trophy" />
 
             <TextView
                 android:id="@+id/firstPlace"
@@ -189,8 +206,12 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp" />
+                android:id="@+id/secondPositionImageView"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/ic_second_trophy" />
 
             <TextView
                 android:id="@+id/secondPlace"
@@ -220,8 +241,12 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp" />
+                android:id="@+id/thirdPositionImageView"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/ic_third_trophy" />
 
             <TextView
                 android:id="@+id/thirdPlace"
@@ -251,8 +276,12 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp" />
+                android:id="@+id/lastPositionImageView"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/ic_like" />
 
             <TextView
                 android:id="@+id/forthPlace"

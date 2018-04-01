@@ -44,7 +44,7 @@ public class DashboardActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         mDatabase = FirebaseDatabase.getInstance()
-                .getReference("events");
+                .getReference("scores");
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);

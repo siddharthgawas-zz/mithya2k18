@@ -108,12 +108,6 @@ public class EventFragment extends Fragment implements  ValueEventListener {
         {
             String key = snapshot.getKey();
             Map<String,Object> map = (Map<String, Object>) snapshot.getValue();
-            if (key.equals("0"))
-                map.put("event_name","Fashion Parade");
-            else if (key.equals("2"))
-                map.put("event_name","Show of Strength");
-            else if (key.equals("1")||key.equals("3")||key.equals("4"))//sos and fashion parade
-                continue;
             events.add(map);
         }
 

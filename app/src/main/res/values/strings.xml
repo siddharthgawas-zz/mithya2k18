@@ -12,7 +12,7 @@
 
     <string name="about_event">Mithya is the cultural event of Padre Conceicao College of Engineering.
     Here all departments, Mech, ETC, Comp and IT compete for the title.</string>
-<!--Create Total of  37 events-->
+    <!--Create Total of  37 events-->
     <string-array name="event_rules">
         <item>
             1.Rule0-1\n

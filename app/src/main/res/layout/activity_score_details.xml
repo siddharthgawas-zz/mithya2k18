@@ -9,40 +9,35 @@
         android:id="@+id/appbar"
         android:layout_height="?attr/actionBarSize"
         android:layout_width="match_parent">
+
             <android.support.v7.widget.Toolbar
-                android:id="@+id/toolbar"
-                app:title="Scores"
+                app:title="Detailed Score List"
                 app:titleTextColor="@color/secondaryTextColor"
+                android:id="@+id/toolbar"
                 android:layout_height="?attr/actionBarSize"
                 android:layout_width="match_parent"></android.support.v7.widget.Toolbar>
     </android.support.design.widget.AppBarLayout>
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
         android:fillViewport="true"
+        android:layout_height="match_parent"
         app:layout_behavior="android.support.design.widget.AppBarLayout$ScrollingViewBehavior">
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:context="org.pccegoa.mithya2k18.DeptScore">
+            tools:context="org.pccegoa.mithya2k18.ScoreDetailsActivity">
 
-
-            <com.github.mikephil.charting.charts.PieChart
-                android:id="@+id/deptScorechart"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_marginBottom="4dp"
-                android:layout_marginEnd="4dp"
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="4dp"
+            <android.support.v7.widget.RecyclerView
+                android:nestedScrollingEnabled="true"
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-
+                app:layout_constraintTop_toTopOf="parent"></android.support.v7.widget.RecyclerView>
         </android.support.constraint.ConstraintLayout>
     </ScrollView>
 </android.support.design.widget.CoordinatorLayout>

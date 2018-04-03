@@ -4,15 +4,15 @@
     package="org.pccegoa.mithya2k18">
 
     <uses-permission android:name="android.permission.INTERNET" />
-
     <uses-permission android:name="android.permission.CALL_PHONE" />
+
     <application
+        android:name=".ApplicationClass"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_mithya_logo_round"
         android:supportsRtl="true"
-        android:name=".ApplicationClass"
         android:theme="@style/AppTheme">
         <activity
             android:name=".DashboardActivity"
@@ -35,26 +35,38 @@
         <activity
             android:name=".AboutActivity"
             android:exported="true"
-            android:parentActivityName=".DashboardActivity"></activity>
+            android:parentActivityName=".DashboardActivity" />
         <activity
             android:name=".DevelopersActivity"
             android:exported="true"
-            android:parentActivityName=".DashboardActivity"></activity>
+            android:parentActivityName=".DashboardActivity" />
 
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
 
-        <activity android:name=".EventsActivity"
+        <activity
+            android:name=".EventsActivity"
             android:exported="true"
-            android:parentActivityName=".DashboardActivity">></activity>
-        <activity android:name=".DeptScore"
-            android:label="Score"/>
-        <activity android:name=".ScheduleActivity"
-            android:label="Schedule"/>
-        <activity android:name=".TeamActivity"
+            android:parentActivityName=".DashboardActivity">
+            >
+        </activity>
+        <activity
+            android:name=".DeptScore"
+            android:label="Score"
+            android:parentActivityName=".DashboardActivity" />
+        <activity
+            android:name=".ScheduleActivity"
+            android:label="Schedule" />
+        <activity
+            android:name=".TeamActivity"
             android:label="Team"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ScoreDetailsActivity"
+            android:exported="true"
+            android:parentActivityName=".DeptScore"
+            ></activity>
     </application>
 
 </manifest>

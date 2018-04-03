@@ -108,10 +108,21 @@ public class COUNCIL extends Fragment {
         lrPic=(ImageView)getView().findViewById(R.id.lr_pic);
         csPic=(ImageView)getView().findViewById(R.id.cs_pic);
         msPic=(ImageView)getView().findViewById(R.id.ms_pic);
+        ImageView urPic=(ImageView)getView().findViewById(R.id.ur_pic);
+        ImageView gsPic=(ImageView)getView().findViewById(R.id.gs_pic);
+        ImageView ssPic=(ImageView)getView().findViewById(R.id.ss_pic);
 
         Bitmap icon= BitmapFactory.decodeResource(getContext().getResources(),R.drawable.rishi);
         Bitmap resized=Bitmap.createScaledBitmap(icon,90,130,true);
         msPic.setImageBitmap(resized);
+
+        icon= BitmapFactory.decodeResource(getContext().getResources(),R.drawable.pranav);
+        resized=Bitmap.createScaledBitmap(icon,90,130,true);
+        ssPic.setImageBitmap(resized);
+
+        icon= BitmapFactory.decodeResource(getContext().getResources(),R.drawable.omkar);
+        resized=Bitmap.createScaledBitmap(icon,90,130,true);
+        gsPic.setImageBitmap(resized);
 
 
         icon= BitmapFactory.decodeResource(getContext().getResources(),R.drawable.sanaa);
@@ -121,6 +132,10 @@ public class COUNCIL extends Fragment {
         icon= BitmapFactory.decodeResource(getContext().getResources(),R.drawable.sayad1);
         resized=Bitmap.createScaledBitmap(icon,90,140,true);
         csPic.setImageBitmap(resized);
+
+        icon= BitmapFactory.decodeResource(getContext().getResources(),R.drawable.neeraj);
+        resized=Bitmap.createScaledBitmap(icon,90,130,true);
+        urPic.setImageBitmap(resized);
 
 //        Picasso.get().load(R.drawable.rishi).into(msPic);
 //        Picasso.get().load(R.drawable.sanaa).into(lrPic);

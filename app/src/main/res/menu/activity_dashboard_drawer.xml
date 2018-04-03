@@ -5,25 +5,22 @@
 
     <group android:checkableBehavior="single"
         android:id="@+id/topMenu">
-        <item
-            android:id="@+id/home"
-            android:icon="@drawable/icons8_home"
-            android:title="HOME" />
+     
         <item
             android:id="@+id/events"
-            android:icon="@drawable/calendar"
+            android:icon="@drawable/ic_calendar"
             android:title="EVENTS" />
         <item
             android:id="@+id/schedule"
-            android:icon="@drawable/alarm_clock"
+            android:icon="@drawable/ic_alarm_clock"
             android:title="SCHEDULE" />
         <item
             android:id="@+id/score"
-            android:icon="@drawable/score"
+            android:icon="@drawable/ic_trophy_shape"
             android:title="SCORE" />
         <item
             android:id="@+id/team"
-            android:icon="@drawable/icons8_people"
+            android:icon="@drawable/ic_group"
             android:title="TEAM"/>
     </group>
 
@@ -32,7 +29,7 @@
 
         <item
             android:id="@+id/about"
-            android:icon="@drawable/about"
+            android:icon="@drawable/ic_icons8_about"
             android:title="ABOUT US"/>
 
     </group>
@@ -42,7 +39,7 @@
 
         <item
             android:id="@+id/developers"
-            android:icon="@drawable/thinking"
+            android:icon="@drawable/ic_thinking"
             android:title="DEVELOPERS"/>
 
     </group>

@@ -1,8 +1,12 @@
 package org.pccegoa.mithya2k18;
 
+        import android.content.Intent;
         import android.graphics.Color;
+        import android.support.v7.app.ActionBar;
         import android.support.v7.app.AppCompatActivity;
         import android.os.Bundle;
+        import android.view.View;
+        import android.widget.Toolbar;
 
         import com.github.mikephil.charting.animation.Easing;
         import com.github.mikephil.charting.charts.PieChart;
@@ -28,6 +32,17 @@ package org.pccegoa.mithya2k18;
 
                        ScoreChart = (PieChart) findViewById(R.id.deptScorechart);
                updatePieChart(25,25,25,25);
+
+               android.support.v7.widget.Toolbar toolbar =  findViewById(R.id.toolbar);
+                setSupportActionBar(toolbar);
+                getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+                getSupportActionBar().setDisplayShowHomeEnabled(true);
+                toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        startActivity(new Intent(getApplicationContext(),DashboardActivity.class));
+                    }
+                });
            }
             public void updatePieChart(int Mscore, int Cscore, int Escore, int Iscore) {
                 List<PieEntry> entries = new ArrayList<>();
@@ -49,8 +64,8 @@ package org.pccegoa.mithya2k18;
                 ScoreChart.invalidate();
                 ScoreChart.setTransparentCircleAlpha(0);
                 Legend legend = ScoreChart.getLegend();
-                legend.setFormSize(30);
-                legend.setPosition(Legend.LegendPosition.BELOW_CHART_RIGHT);
+                legend.setFormSize(20);
+                legend.setPosition(Legend.LegendPosition.BELOW_CHART_LEFT);
                 legend.setYEntrySpace(10);
             }
 }

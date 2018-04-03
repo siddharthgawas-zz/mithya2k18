@@ -10,19 +10,13 @@ android:layout_height="match_parent">
     android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
     >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Schedule"
-        android:textSize="20dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="7dp"/>
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
         app:layout_scrollFlags="scroll|enterAlways"
+        app:title="Schedule"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
     <android.support.design.widget.TabLayout

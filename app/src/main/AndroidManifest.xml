@@ -49,11 +49,11 @@
             android:exported="true"
             android:parentActivityName=".DashboardActivity">></activity>
         <activity android:name=".DeptScore"
-            android:label="Score"/>
+            android:label="Score"
+            android:screenOrientation="portrait"/>
         <activity android:name=".ScheduleActivity"
-            android:label="Schedule"/>
+            />
         <activity android:name=".TeamActivity"
-            android:label="Team"
             android:screenOrientation="portrait"></activity>
     </application>
 

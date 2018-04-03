@@ -212,7 +212,8 @@
                     android:layout_height="120dp"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="25dp"
-                    android:id="@+id/etc2_pic"/>
+                    android:id="@+id/etc2_pic"
+                    />
 
                 <TextView
                     android:layout_width="wrap_content"

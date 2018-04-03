@@ -115,6 +115,10 @@ public class COORDINATORS extends Fragment {
         it2Pic=(ImageView) getView().findViewById(R.id.it2_pic);
         etc1Pic=(ImageView) getView().findViewById(R.id.etc1_pic);
         ImageView comp2Pic=(ImageView) getView().findViewById(R.id.comp2_pic);
+        ImageView comp1Pic=(ImageView) getView().findViewById(R.id.comp1_pic);
+        ImageView etc2Pic=(ImageView) getView().findViewById(R.id.etc2_pic);
+        ImageView mech2Pic=(ImageView) getView().findViewById(R.id.mech2_pic);
+        ImageView mech1Pic=(ImageView) getView().findViewById(R.id.mech1_pic);
 
         Bitmap icon= BitmapFactory.decodeResource(getContext().getResources(),R.drawable.snivio);
         Bitmap resized=Bitmap.createScaledBitmap(icon,90,130,true);
@@ -129,12 +133,29 @@ public class COORDINATORS extends Fragment {
         resized=Bitmap.createScaledBitmap(icon,90,130,true);
         etc1Pic.setImageBitmap(resized);
 
+//        icon = BitmapFactory.decodeResource(getContext().getResources(),R.drawable.divya2);
+//        resized=Bitmap.createScaledBitmap(icon,90,130,true);
+//        etc2Pic.setImageBitmap(resized);
+
+
         icon= BitmapFactory.decodeResource(getContext().getResources(),R.drawable.ethan);
         resized=Bitmap.createScaledBitmap(icon,90,130,true);
         comp2Pic.setImageBitmap(resized);
 
+        icon= BitmapFactory.decodeResource(getContext().getResources(),R.drawable.glen1);
+        resized=Bitmap.createScaledBitmap(icon,90,130,true);
+        comp1Pic.setImageBitmap(resized);
 
-//        Picasso.get().load(R.drawable.biswas).into(it2Pic);
+        icon= BitmapFactory.decodeResource(getContext().getResources(),R.drawable.saurabh);
+        resized=Bitmap.createScaledBitmap(icon,90,130,true);
+        mech1Pic.setImageBitmap(resized);
+
+        icon= BitmapFactory.decodeResource(getContext().getResources(),R.drawable.dikshay);
+        resized=Bitmap.createScaledBitmap(icon,90,130,true);
+        mech2Pic.setImageBitmap(resized);
+
+
+//          Picasso.get().load(R.drawable.divya2).into(etc2Pic);
 //        Picasso.get().load(R.drawable.snivio).into(it1Pic);
 //        Picasso.get().load(R.drawable.royston).into(etc1Pic);
 //        Picasso.get().load(R.drawable.ethan).into(comp2Pic);

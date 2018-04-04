@@ -3,6 +3,7 @@ package org.pccegoa.mithya2k18.fragment;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
@@ -120,38 +121,37 @@ public class COORDINATORS extends Fragment {
         ImageView mech2Pic=(ImageView) getView().findViewById(R.id.mech2_pic);
         ImageView mech1Pic=(ImageView) getView().findViewById(R.id.mech1_pic);
 
-        Bitmap icon= BitmapFactory.decodeResource(getContext().getResources(),R.drawable.snivio);
-        Bitmap resized=Bitmap.createScaledBitmap(icon,90,130,true);
+
+        Bitmap resized=
+                decodeSampledBitmapFromResource(getResources(),R.drawable.snivio,90,130);
         it1Pic.setImageBitmap(resized);
 
 
-        icon = BitmapFactory.decodeResource(getContext().getResources(),R.drawable.biswas);
-        resized=Bitmap.createScaledBitmap(icon,90,130,true);
+        resized=
+                decodeSampledBitmapFromResource(getResources(),R.drawable.biswas,90,130);
         it2Pic.setImageBitmap(resized);
 
-        icon = BitmapFactory.decodeResource(getContext().getResources(),R.drawable.royston);
-        resized=Bitmap.createScaledBitmap(icon,90,130,true);
+        resized=
+                decodeSampledBitmapFromResource(getResources(),R.drawable.royston,90,130);
         etc1Pic.setImageBitmap(resized);
 
-//        icon = BitmapFactory.decodeResource(getContext().getResources(),R.drawable.divya2);
-//        resized=Bitmap.createScaledBitmap(icon,90,130,true);
-//        etc2Pic.setImageBitmap(resized);
+       /* resized=
+                decodeSampledBitmapFromResource(getResources(),R.drawable.divya2,90,130);
+       etc2Pic.setImageBitmap(resized);*/
 
 
-        icon= BitmapFactory.decodeResource(getContext().getResources(),R.drawable.ethan);
-        resized=Bitmap.createScaledBitmap(icon,90,130,true);
+        resized=
+                decodeSampledBitmapFromResource(getResources(),R.drawable.ethan,90,130);
         comp2Pic.setImageBitmap(resized);
 
-        icon= BitmapFactory.decodeResource(getContext().getResources(),R.drawable.glen1);
-        resized=Bitmap.createScaledBitmap(icon,90,130,true);
+        resized=
+                decodeSampledBitmapFromResource(getResources(),R.drawable.glen1,90,130);
         comp1Pic.setImageBitmap(resized);
 
-        icon= BitmapFactory.decodeResource(getContext().getResources(),R.drawable.saurabh);
-        resized=Bitmap.createScaledBitmap(icon,90,130,true);
+        decodeSampledBitmapFromResource(getResources(),R.drawable.saurabh,90,130);
         mech1Pic.setImageBitmap(resized);
 
-        icon= BitmapFactory.decodeResource(getContext().getResources(),R.drawable.dikshay);
-        resized=Bitmap.createScaledBitmap(icon,90,130,true);
+        decodeSampledBitmapFromResource(getResources(),R.drawable.dikshay,90,130);
         mech2Pic.setImageBitmap(resized);
 
 
@@ -278,6 +278,32 @@ public class COORDINATORS extends Fragment {
                 openInstagram(mInstagramUri.buildUpon().appendPath(mmech2Username).build());
             }
         });
+    }
+
+    private int calculateInSampleSize(BitmapFactory.Options options,int rWidth, int rHeight)
+    {
+        final int height = options.outHeight;
+        final int  width = options.outWidth;
+        int inSampleSize = 1;
+        if(height > rHeight || width > rWidth)
+        {
+            int hH = height / 8;
+            int hW = height / 8;
+            while((hH / inSampleSize)>=rHeight && (hW /inSampleSize)>=rWidth)
+                inSampleSize *= 2;
+        }
+        return inSampleSize;
+    }
+
+    public Bitmap decodeSampledBitmapFromResource(Resources res, int resId,
+                                                  int rW, int rH)
+    {
+        BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inJustDecodeBounds = true;
+        BitmapFactory.decodeResource(res,resId,options);
+        options.inSampleSize = calculateInSampleSize(options,rW,rH);
+        options.inJustDecodeBounds = false;
+        return BitmapFactory.decodeResource(res,resId,options);
     }
 
     private void openInstagram(Uri uri) {

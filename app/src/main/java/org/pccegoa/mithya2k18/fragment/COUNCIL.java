@@ -3,6 +3,7 @@ package org.pccegoa.mithya2k18.fragment;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
@@ -112,29 +113,24 @@ public class COUNCIL extends Fragment {
         ImageView gsPic=(ImageView)getView().findViewById(R.id.gs_pic);
         ImageView ssPic=(ImageView)getView().findViewById(R.id.ss_pic);
 
-        Bitmap icon= BitmapFactory.decodeResource(getContext().getResources(),R.drawable.rishi);
-        Bitmap resized=Bitmap.createScaledBitmap(icon,90,130,true);
+        Bitmap resized=decodeSampledBitmapFromResource(getResources(),R.drawable.rishi,90,130);
         msPic.setImageBitmap(resized);
 
-        icon= BitmapFactory.decodeResource(getContext().getResources(),R.drawable.pranav);
-        resized=Bitmap.createScaledBitmap(icon,90,130,true);
+        resized=decodeSampledBitmapFromResource(getResources(),R.drawable.pranav,90,130);
         ssPic.setImageBitmap(resized);
 
-        icon= BitmapFactory.decodeResource(getContext().getResources(),R.drawable.omkar);
-        resized=Bitmap.createScaledBitmap(icon,90,130,true);
+        resized=decodeSampledBitmapFromResource(getResources(),R.drawable.omkar,90,130);
         gsPic.setImageBitmap(resized);
 
 
-        icon= BitmapFactory.decodeResource(getContext().getResources(),R.drawable.sanaa);
-        resized=Bitmap.createScaledBitmap(icon,90,130,true);
+        resized=decodeSampledBitmapFromResource(getResources(),R.drawable.sanaa,90,130);
         lrPic.setImageBitmap(resized);
 
-        icon= BitmapFactory.decodeResource(getContext().getResources(),R.drawable.sayad1);
-        resized=Bitmap.createScaledBitmap(icon,90,140,true);
+
+        resized=decodeSampledBitmapFromResource(getResources(),R.drawable.sayad,90,130);
         csPic.setImageBitmap(resized);
 
-        icon= BitmapFactory.decodeResource(getContext().getResources(),R.drawable.neeraj);
-        resized=Bitmap.createScaledBitmap(icon,90,130,true);
+        resized=decodeSampledBitmapFromResource(getResources(),R.drawable.neeraj,90,130);
         urPic.setImageBitmap(resized);
 
 //        Picasso.get().load(R.drawable.rishi).into(msPic);
@@ -230,6 +226,32 @@ public class COUNCIL extends Fragment {
                 openInstagram(mInstagramUri.buildUpon().appendPath(mMsUsername).build());
             }
         });
+    }
+
+    private int calculateInSampleSize(BitmapFactory.Options options,int rWidth, int rHeight)
+    {
+        final int height = options.outHeight;
+        final int  width = options.outWidth;
+        int inSampleSize = 1;
+        if(height > rHeight || width > rWidth)
+        {
+            int hH = height / 8;
+            int hW = height / 8;
+            while((hH / inSampleSize)>=rHeight && (hW /inSampleSize)>=rWidth)
+                inSampleSize *= 2;
+        }
+        return inSampleSize;
+    }
+
+    public Bitmap decodeSampledBitmapFromResource(Resources res, int resId,
+                                                  int rW, int rH)
+    {
+        BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inJustDecodeBounds = true;
+        BitmapFactory.decodeResource(res,resId,options);
+        options.inSampleSize = calculateInSampleSize(options,rW,rH);
+        options.inJustDecodeBounds = false;
+        return BitmapFactory.decodeResource(res,resId,options);
     }
 
     private void openInstagram(Uri uri) {

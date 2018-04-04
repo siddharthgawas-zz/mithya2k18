@@ -8,19 +8,20 @@
 
         <item
             android:id="@+id/events"
-            android:icon="@drawable/ic_calendar"
-            android:title="EVENTS" />
+            android:icon="@drawable/ic_calendar_1"
+            android:title="EVENTS"
+            />
         <item
             android:id="@+id/schedule"
-            android:icon="@drawable/ic_alarm_clock"
+            android:icon="@drawable/ic_alarm_clock_1"
             android:title="SCHEDULE" />
         <item
             android:id="@+id/score"
-            android:icon="@drawable/ic_trophy_shape"
+            android:icon="@drawable/ic_cup"
             android:title="SCORE" />
         <item
             android:id="@+id/team"
-            android:icon="@drawable/ic_group"
+            android:icon="@drawable/ic_team"
             android:title="TEAM"/>
     </group>
 
@@ -29,7 +30,7 @@
 
         <item
             android:id="@+id/about"
-            android:icon="@drawable/ic_icons8_about"
+            android:icon="@drawable/ic_icons8_about_1"
             android:title="ABOUT US"/>
 
     </group>
@@ -39,7 +40,7 @@
 
         <item
             android:id="@+id/developers"
-            android:icon="@drawable/ic_thinking"
+            android:icon="@drawable/ic_think"
             android:title="DEVELOPERS"/>
 
     </group>

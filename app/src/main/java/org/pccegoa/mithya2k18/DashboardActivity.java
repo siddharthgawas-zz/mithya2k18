@@ -1,6 +1,9 @@
 package org.pccegoa.mithya2k18;
 
 import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.util.Pair;
 import android.view.View;
@@ -93,6 +96,10 @@ public class DashboardActivity extends AppCompatActivity
         MyBounceInterpolator interpolator = new MyBounceInterpolator(0.2, 20);
         myAnim.setInterpolator(interpolator);
         scoreButton.startAnimation(myAnim);
+
+        navigationView.getBackground().setColorFilter(0x80000000, PorterDuff.Mode.MULTIPLY);
+        navigationView.setItemTextColor(ColorStateList.valueOf(Color.WHITE));
+        navigationView.setItemIconTintList(null);
     }
 
 

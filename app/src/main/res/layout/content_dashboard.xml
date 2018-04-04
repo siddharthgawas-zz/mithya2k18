@@ -51,7 +51,6 @@
         app:srcCompat="@drawable/icon1" />
 
 
-
     <ImageButton
         android:id="@+id/eventsPic"
         android:layout_width="199dp"

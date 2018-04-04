@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.storage.FirebaseStorage;
@@ -60,13 +61,21 @@ public class EventAdapter extends BaseAdapter {
         eventNameTextView.setText((String)events.get(position).get("event_name"));
         String fileId = ((String) events.get(position).get("image"))+".jpg";
         StorageReference reference = FirebaseStorage.getInstance().getReference();
-        reference.child("images/"+fileId).getDownloadUrl().addOnSuccessListener(
-                new OnSuccessListener<Uri>() {
-                    @Override
-                    public void onSuccess(Uri uri) {
-                        Picasso.get().load(uri).into(imageView);
-                    }
-                });
+        try
+        {
+            reference.child("images/"+fileId).getDownloadUrl().addOnSuccessListener(
+                    new OnSuccessListener<Uri>() {
+                        @Override
+                        public void onSuccess(Uri uri) {
+                            Picasso.get().load(uri).into(imageView);
+                        }
+                    });
+
+        }
+        catch ( java.util.concurrent.RejectedExecutionException e)
+        {
+            return view;
+        }
 
         return view;
     }

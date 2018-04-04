@@ -18,7 +18,7 @@ android {
         versionName "1.0"
         vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        manifestPlaceholders = [onesignal_app_id: "1af76666-eb36-4101-b096-4bccb7bee81b",
+        manifestPlaceholders = [onesignal_app_id               : "1af76666-eb36-4101-b096-4bccb7bee81b",
                                 onesignal_google_project_number: "REMOTE"]
     }
     buildTypes {
@@ -48,7 +48,8 @@ dependencies {
     implementation 'com.android.support:cardview-v7:26.1.0'
     implementation 'com.squareup.picasso:picasso:2.71828'
     compile 'com.onesignal:OneSignal:[3.8.3, 3.99.99]'
-    compile 'de.hdodenhof:circleimageview:1.2.1'
+    implementation 'com.android.support:recyclerview-v7:26.1.0'
+
 }
 
 

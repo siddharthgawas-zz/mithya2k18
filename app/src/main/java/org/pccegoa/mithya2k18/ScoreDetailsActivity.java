@@ -85,7 +85,7 @@ public class ScoreDetailsActivity extends AppCompatActivity  implements ValueEve
             events.add(map);
         }
         DetailedScoreAdapter adapter = new DetailedScoreAdapter(this,events,
-                mDepartment);
+                DetailedScoreAdapter.CE_SCORE);
         adapter.sortBasedOnCategories();
         mRecyclerView.setAdapter(adapter);
     }

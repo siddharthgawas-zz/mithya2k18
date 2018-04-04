@@ -11,6 +11,8 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -60,7 +62,8 @@ public class DashboardActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         scoreButton=(ImageView) findViewById(R.id.ScorePic);
-
+        ImageView scheduleButton=(ImageView) findViewById(R.id.schedulePic);
+        ImageView eventsButton=(ImageView) findViewById(R.id.eventsPic);
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
@@ -74,7 +77,24 @@ public class DashboardActivity extends AppCompatActivity
         imageView.setOnClickListener(this);
         imageView = findViewById(R.id.eventsPic);
         imageView.setOnClickListener(this);
+        imageView = findViewById(R.id.ScorePic);
+        imageView.setOnClickListener(this);
+
+        final Animation myAnim = AnimationUtils.loadAnimation(this, R.anim.bounce);
+
+        // Use bounce interpolator with amplitude 0.2 and frequency 20
+
+        MyBounceInterpolator interpolator1 = new MyBounceInterpolator(0.2, 20);
+        myAnim.setInterpolator(interpolator1);
+        scheduleButton.startAnimation(myAnim);
+        MyBounceInterpolator interpolator2 = new MyBounceInterpolator(0.2, 20);
+        myAnim.setInterpolator(interpolator2);
+        eventsButton.startAnimation(myAnim);
+        MyBounceInterpolator interpolator = new MyBounceInterpolator(0.2, 20);
+        myAnim.setInterpolator(interpolator);
+        scoreButton.startAnimation(myAnim);
     }
+
 
     @Override
     public void onClick(View v) {
@@ -86,17 +106,19 @@ public class DashboardActivity extends AppCompatActivity
                 startActivity(i);
                 break;
             case R.id.schedulePic:
+                Intent schedulebutton=new Intent(this,ScheduleActivity.class);
+                startActivity(schedulebutton);
+                break;
+            case R.id.ScorePic:
+                Intent score=new Intent(this,DeptScore.class);
+                startActivity(score);
                 break;
             default:
                 break;
         }
     }
 
-    public void onScheduleClick(View view)
-    {
-        Intent schedulebutton=new Intent(this,ScheduleActivity.class);
-        startActivity(schedulebutton);
-    }
+
 
     @Override
     public void onBackPressed() {

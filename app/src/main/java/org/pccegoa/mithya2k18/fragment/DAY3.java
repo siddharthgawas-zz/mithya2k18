@@ -3,12 +3,29 @@ package org.pccegoa.mithya2k18.fragment;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import org.pccegoa.mithya2k18.R;
+import org.pccegoa.mithya2k18.adapter.ScheduleAdapter;
+import org.pccegoa.mithya2k18.utility.EventFilter;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.Map;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -18,7 +35,7 @@ import org.pccegoa.mithya2k18.R;
  * Use the {@link DAY3#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class DAY3 extends Fragment {
+public class DAY3 extends Fragment implements ValueEventListener{
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -27,7 +44,9 @@ public class DAY3 extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-
+    private Date d1 = new Date();
+    private Date d2 = new Date();
+    private DatabaseReference reference = null;
     private OnFragmentInteractionListener mListener;
 
     public DAY3() {
@@ -53,6 +72,23 @@ public class DAY3 extends Fragment {
     }
 
     @Override
+    public void onDataChange(DataSnapshot dataSnapshot) {
+        List<Map<String,Object>> schedule = new ArrayList<>();
+        for(DataSnapshot snapshot:dataSnapshot.getChildren())
+            schedule.add((Map<String,Object>)snapshot.getValue());
+        schedule = EventFilter.getEventsBetweenTime(d1,d2,schedule);
+        schedule = EventFilter.sort(schedule);
+        ScheduleAdapter scheduleAdapter = new ScheduleAdapter(getContext(),R.layout.schedule_item
+                ,schedule);
+        ListView listView = getView().findViewById(R.id.day2_list);
+        listView.setAdapter(scheduleAdapter);
+    }
+
+    @Override
+    public void onCancelled(DatabaseError databaseError) {
+
+    }
+    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
@@ -65,7 +101,21 @@ public class DAY3 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_day3, container, false);
+        return inflater.inflate(R.layout.fragment_day2, container, false);
+    }
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy HH:mm");
+        try {
+            d1 = format.parse("13-04-2018 00:00");
+            d2 = format.parse("13-04-2018 23:59");
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        reference = FirebaseDatabase.getInstance().getReference("schedule");
+        reference.addValueEventListener(this);
     }
 
     // TODO: Rename method, update argument and hook method into UI event

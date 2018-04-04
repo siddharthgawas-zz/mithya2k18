@@ -24,6 +24,7 @@ public class EventsActivity extends AppCompatActivity {
         Toolbar toolbar =  findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
         viewPager = findViewById(R.id.viewPager);
         tabLayout = findViewById(R.id.tabs);
         pageAdapter = new EventPageAdapter(getSupportFragmentManager());

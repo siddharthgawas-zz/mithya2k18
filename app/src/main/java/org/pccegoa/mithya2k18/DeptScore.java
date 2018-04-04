@@ -5,6 +5,9 @@ package org.pccegoa.mithya2k18;
         import android.support.v7.app.ActionBar;
         import android.support.v7.app.AppCompatActivity;
         import android.os.Bundle;
+        import android.view.Menu;
+        import android.view.MenuInflater;
+        import android.view.MenuItem;
         import android.view.View;
         import android.widget.Toolbar;
 
@@ -27,6 +30,7 @@ package org.pccegoa.mithya2k18;
         import com.google.firebase.database.ValueEventListener;
 
         import org.pccegoa.mithya2k18.adapter.DetailedScoreAdapter;
+        import org.pccegoa.mithya2k18.fragment.ScoreKeyFragment;
         import org.pccegoa.mithya2k18.utility.ScoreCounter;
 
         import java.util.ArrayList;
@@ -108,7 +112,24 @@ public class DeptScore extends AppCompatActivity implements ValueEventListener {
                     }
                 });
             }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.score_list_menu, menu);
+        return true;
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.scoreKeyMenu)
+        {
+            ScoreKeyFragment fragment = new ScoreKeyFragment();
+            fragment.show(getSupportFragmentManager(),"Fragment");
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 Iterable<DataSnapshot> iterable  = dataSnapshot.getChildren();

@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.TextView;
 
 import org.pccegoa.mithya2k18.R;
 
@@ -45,6 +46,24 @@ public class ScheduleAdapter extends ArrayAdapter<Map<String,Object>>{
         if(position % 2 != 0)
             ((ConstraintLayout)rootView).setBackgroundColor(getContext().getResources().
                     getColor(R.color.leaderBoard1));
+        TextView eventName = rootView.findViewById(R.id.eventNameTextView);
+        TextView eventCategory = rootView.findViewById(R.id.eventCategoryTextView);
+        TextView location = rootView.findViewById(R.id.locationTextView);
+        TextView time = rootView.findViewById(R.id.timeTextView);
+
+        Map<String,Object> event = mEvents.get(position);
+        eventName.setText((String)mEvents.get(position).get("event_name"));
+        location.setText((String)mEvents.get(position).get("location"));
+
+        if(event.get("category").equals("A"))
+            eventCategory.setText("Ace");
+        else if(event.get("category").equals("K"))
+            eventCategory.setText("King");
+        else if(event.get("category").equals("Q"))
+            eventCategory.setText("Queen");
+        else if(event.get("category").equals("J"))
+            eventCategory.setText("Jack");
+        time.setText((String)event.get("time"));
         return rootView;
 
     }

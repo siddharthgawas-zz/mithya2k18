@@ -56,25 +56,6 @@ public class ScoreDetailsActivity extends AppCompatActivity  implements ValueEve
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.score_list_menu, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        if (id == R.id.scoreKeyMenu)
-        {
-            ScoreKeyFragment fragment = new ScoreKeyFragment();
-            fragment.show(getSupportFragmentManager(),"Fragment");
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
-    @Override
     public void onDataChange(DataSnapshot dataSnapshot) {
         Iterable<DataSnapshot> iterable = dataSnapshot.getChildren();
         List<Map<String,Object>> events = new ArrayList<>();

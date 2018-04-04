@@ -3,12 +3,20 @@ package org.pccegoa.mithya2k18.fragment;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 
 import org.pccegoa.mithya2k18.R;
+import org.pccegoa.mithya2k18.adapter.ScheduleAdapter;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -66,6 +74,20 @@ public class DAY1 extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_day1, container, false);
+    }
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        ListView listView =  view.findViewById(R.id.day1_list);
+        List<Map<String,Object>> events = new ArrayList<>(20);
+        events.add(new HashMap<String, Object>(2));
+        events.add(new HashMap<String, Object>(2));
+        ScheduleAdapter scheduleAdapter = new ScheduleAdapter(getContext(),
+                R.layout.schedule_item,events);
+
+        listView.setAdapter(scheduleAdapter);
     }
 
     // TODO: Rename method, update argument and hook method into UI event

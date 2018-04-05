@@ -57,6 +57,9 @@ public class SplashActivity extends AppCompatActivity implements Animator.Animat
 
     @Override
     public void onAnimationEnd(Animator animation, boolean isReverse) {
+        Intent intent = new Intent(this,DashboardActivity.class);
+        startActivity(intent);
+        finish();
     }
 
     @Override

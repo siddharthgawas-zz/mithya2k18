@@ -56,9 +56,11 @@
             android:screenOrientation="portrait"/>
         <activity android:name=".ScheduleActivity"
             android:screenOrientation="portrait"
+            android:parentActivityName=".DashboardActivity"
             />
         <activity android:name=".TeamActivity"
-            android:screenOrientation="portrait"></activity>
+           android:screenOrientation="portrait"
+            android:parentActivityName=".DashboardActivity"></activity>
         <activity android:name=".ScoreDetailsActivity"
             android:exported="true"
             android:screenOrientation="portrait"

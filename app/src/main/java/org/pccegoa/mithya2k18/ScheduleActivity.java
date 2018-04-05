@@ -35,12 +35,7 @@ public class ScheduleActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),DashboardActivity.class));
-            }
-        });
+
     }
 
     private void setupViewPager(ViewPager viewPager) {

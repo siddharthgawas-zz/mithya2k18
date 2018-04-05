@@ -15,8 +15,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.squareup.picasso.Picasso;
-
 import org.pccegoa.mithya2k18.R;
 
 /**
@@ -135,9 +133,9 @@ public class COORDINATORS extends Fragment {
                 decodeSampledBitmapFromResource(getResources(),R.drawable.royston,90,130);
         etc1Pic.setImageBitmap(resized);
 
-       /* resized=
-                decodeSampledBitmapFromResource(getResources(),R.drawable.divya2,90,130);
-       etc2Pic.setImageBitmap(resized);*/
+       resized=
+                decodeSampledBitmapFromResource(getResources(),R.drawable.divya,90,130);
+       etc2Pic.setImageBitmap(resized);
 
 
         resized=
@@ -145,13 +143,15 @@ public class COORDINATORS extends Fragment {
         comp2Pic.setImageBitmap(resized);
 
         resized=
-                decodeSampledBitmapFromResource(getResources(),R.drawable.glen1,90,130);
+                decodeSampledBitmapFromResource(getResources(),R.drawable.glen,90,130);
         comp1Pic.setImageBitmap(resized);
 
-        decodeSampledBitmapFromResource(getResources(),R.drawable.saurabh,90,130);
+        resized=
+                decodeSampledBitmapFromResource(getResources(),R.drawable.saurabh,90,130);
         mech1Pic.setImageBitmap(resized);
 
-        decodeSampledBitmapFromResource(getResources(),R.drawable.dikshay,90,130);
+        resized=
+                decodeSampledBitmapFromResource(getResources(),R.drawable.dikshay,90,130);
         mech2Pic.setImageBitmap(resized);
 
 
@@ -167,7 +167,7 @@ public class COORDINATORS extends Fragment {
             @Override
             public void onClick(View compCall) {
                 Intent callComp1 = new Intent(Intent.ACTION_DIAL);
-                callComp1.setData(Uri.parse("tel:8554063436"));
+                callComp1.setData(Uri.parse("tel:+91 8554063436"));
                 startActivity(callComp1);
             }
         });
@@ -176,7 +176,7 @@ public class COORDINATORS extends Fragment {
             @Override
             public void onClick(View copmCall) {
                 Intent callComp2 = new Intent(Intent.ACTION_DIAL);
-                callComp2.setData(Uri.parse("tel:9011383857"));
+                callComp2.setData(Uri.parse("tel:+91 9011383857"));
                 startActivity(callComp2);
             }
         });
@@ -184,7 +184,7 @@ public class COORDINATORS extends Fragment {
             @Override
             public void onClick(View etcCall) {
                 Intent callEtc1 = new Intent(Intent.ACTION_DIAL);
-                callEtc1.setData(Uri.parse("tel:8806805372"));
+                callEtc1.setData(Uri.parse("tel:+91 8806805372"));
                 startActivity(callEtc1);
             }
         });
@@ -192,7 +192,7 @@ public class COORDINATORS extends Fragment {
             @Override
             public void onClick(View etcCall) {
                 Intent callEtc2 = new Intent(Intent.ACTION_DIAL);
-                callEtc2.setData(Uri.parse("tel:8888623717"));
+                callEtc2.setData(Uri.parse("tel:+91 8888623717"));
                 startActivity(callEtc2);
             }
         });
@@ -200,7 +200,7 @@ public class COORDINATORS extends Fragment {
             @Override
             public void onClick(View itCall) {
                 Intent callIt1 = new Intent(Intent.ACTION_DIAL);
-                callIt1.setData(Uri.parse("tel:7720865311"));
+                callIt1.setData(Uri.parse("tel:+91 7720865311"));
                 startActivity(callIt1);
             }
         });
@@ -208,7 +208,7 @@ public class COORDINATORS extends Fragment {
             @Override
             public void onClick(View itCall) {
                 Intent callIt2 = new Intent(Intent.ACTION_DIAL);
-                callIt2.setData(Uri.parse("tel:8554958547"));
+                callIt2.setData(Uri.parse("tel:+91 8554958547"));
                 startActivity(callIt2);
             }
         });
@@ -216,7 +216,7 @@ public class COORDINATORS extends Fragment {
             @Override
             public void onClick(View mechCall) {
                 Intent callMech1 = new Intent(Intent.ACTION_DIAL);
-                callMech1.setData(Uri.parse("tel:7350970607"));
+                callMech1.setData(Uri.parse("tel:+91 7350970607"));
                 startActivity(callMech1);
             }
         });
@@ -224,7 +224,7 @@ public class COORDINATORS extends Fragment {
             @Override
             public void onClick(View mechCall) {
                 Intent callMech2 = new Intent(Intent.ACTION_DIAL);
-                callMech2.setData(Uri.parse("tel:9130812507"));
+                callMech2.setData(Uri.parse("tel:+91 9130812507"));
                 startActivity(callMech2);
             }
         });

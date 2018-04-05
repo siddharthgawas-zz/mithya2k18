@@ -15,8 +15,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.squareup.picasso.Picasso;
-
 import org.pccegoa.mithya2k18.R;
 
 /**
@@ -113,7 +111,7 @@ public class COUNCIL extends Fragment {
         ImageView gsPic=(ImageView)getView().findViewById(R.id.gs_pic);
         ImageView ssPic=(ImageView)getView().findViewById(R.id.ss_pic);
 
-        Bitmap resized=decodeSampledBitmapFromResource(getResources(),R.drawable.rishi,90,130);
+        Bitmap resized=decodeSampledBitmapFromResource(getResources(),R.drawable.rishikesh,90,130);
         msPic.setImageBitmap(resized);
 
         resized=decodeSampledBitmapFromResource(getResources(),R.drawable.pranav,90,130);
@@ -127,7 +125,7 @@ public class COUNCIL extends Fragment {
         lrPic.setImageBitmap(resized);
 
 
-        resized=decodeSampledBitmapFromResource(getResources(),R.drawable.sayad,90,130);
+        resized=decodeSampledBitmapFromResource(getResources(),R.drawable.sayaed,90,130);
         csPic.setImageBitmap(resized);
 
         resized=decodeSampledBitmapFromResource(getResources(),R.drawable.neeraj,90,130);
@@ -144,7 +142,7 @@ public class COUNCIL extends Fragment {
             @Override
             public void onClick(View gsCall) {
                     Intent callGs = new Intent(Intent.ACTION_DIAL);
-                    callGs.setData(Uri.parse("tel:9403839012"));
+                    callGs.setData(Uri.parse("tel:+91 9403839012"));
                     startActivity(callGs);
             }
         });
@@ -153,7 +151,7 @@ public class COUNCIL extends Fragment {
             @Override
             public void onClick(View lrCall) {
                 Intent callLr = new Intent(Intent.ACTION_DIAL);
-                callLr.setData(Uri.parse("tel:7798652211"));
+                callLr.setData(Uri.parse("tel:+91 7798652211"));
                 startActivity(callLr);
             }
         });
@@ -161,7 +159,7 @@ public class COUNCIL extends Fragment {
             @Override
             public void onClick(View urCall) {
                 Intent callUr = new Intent(Intent.ACTION_DIAL);
-                callUr.setData(Uri.parse("tel:9673280364"));
+                callUr.setData(Uri.parse("tel:+91 9673280364"));
                 startActivity(callUr);
             }
         });
@@ -169,7 +167,7 @@ public class COUNCIL extends Fragment {
             @Override
             public void onClick(View csCall) {
                 Intent callCs = new Intent(Intent.ACTION_DIAL);
-                callCs.setData(Uri.parse("tel:9922982340"));
+                callCs.setData(Uri.parse("tel:+91 9922982340"));
                 startActivity(callCs);
             }
         });
@@ -177,7 +175,7 @@ public class COUNCIL extends Fragment {
             @Override
             public void onClick(View ssCall) {
                 Intent callSs = new Intent(Intent.ACTION_DIAL);
-                callSs.setData(Uri.parse("tel:8806723902"));
+                callSs.setData(Uri.parse("tel:+91 8806723902"));
                 startActivity(callSs);
             }
         });
@@ -185,7 +183,7 @@ public class COUNCIL extends Fragment {
             @Override
             public void onClick(View msCall) {
                 Intent callMs = new Intent(Intent.ACTION_DIAL);
-                callMs.setData(Uri.parse("tel:7767832562"));
+                callMs.setData(Uri.parse("tel:+91 7767832562"));
                 startActivity(callMs);
             }
         });

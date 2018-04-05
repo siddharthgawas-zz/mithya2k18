@@ -4,6 +4,7 @@ plugins {
 apply plugin: 'com.onesignal.androidsdk.onesignal-gradle-plugin'
 
 apply plugin: 'com.android.application'
+apply plugin: 'io.fabric'
 
 repositories {
     maven { url 'https://maven.google.com' }
@@ -50,6 +51,8 @@ dependencies {
     compile 'com.onesignal:OneSignal:[3.8.3, 3.99.99]'
     compile 'de.hdodenhof:circleimageview:1.2.1'
     implementation 'com.android.support:recyclerview-v7:26.1.0'
+    compile 'com.crashlytics.sdk.android:crashlytics:2.9.1'
+
 
 }
 

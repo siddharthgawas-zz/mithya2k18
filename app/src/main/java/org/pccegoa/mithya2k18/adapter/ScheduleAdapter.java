@@ -12,6 +12,9 @@ import android.widget.TextView;
 
 import org.pccegoa.mithya2k18.R;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -63,7 +66,18 @@ public class ScheduleAdapter extends ArrayAdapter<Map<String,Object>>{
             eventCategory.setText("Queen");
         else if(event.get("category").equals("J"))
             eventCategory.setText("Jack");
-        time.setText((String)event.get("time"));
+
+        SimpleDateFormat format = new SimpleDateFormat("hh:mm a");
+        SimpleDateFormat format2 = new SimpleDateFormat("dd-MM-yyyy HH:mm");
+        try {
+            Date d = format2.parse((String) event.get("time"));
+            String timeString = format.format(d);
+            time.setText(timeString);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+
         return rootView;
 
     }

@@ -55,12 +55,6 @@ public class DeptScore extends AppCompatActivity implements ValueEventListener {
                 setSupportActionBar(toolbar);
                 getSupportActionBar().setDisplayHomeAsUpEnabled(true);
                 getSupportActionBar().setDisplayShowHomeEnabled(true);
-                toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        startActivity(new Intent(getApplicationContext(),DashboardActivity.class));
-                    }
-                });
            }
             public void updatePieChart(int Mscore, int Cscore, int Escore, int Iscore) {
                 final List<PieEntry> entries = new ArrayList<>();

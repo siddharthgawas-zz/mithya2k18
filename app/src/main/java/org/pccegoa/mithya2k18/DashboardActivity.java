@@ -45,6 +45,8 @@ public class DashboardActivity extends AppCompatActivity
     private ImageView secondImageView = null;
     private ImageView thirdImageView = null;
     private ImageView lastImageView = null;
+    private ImageView scheduleButton;
+    private ImageView eventsButton;
         ImageView scoreButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,8 +67,8 @@ public class DashboardActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         scoreButton=(ImageView) findViewById(R.id.ScorePic);
-        ImageView scheduleButton=(ImageView) findViewById(R.id.schedulePic);
-        ImageView eventsButton=(ImageView) findViewById(R.id.eventsPic);
+        scheduleButton=(ImageView)findViewById(R.id.schedulePic);
+        eventsButton=(ImageView)findViewById(R.id.eventsPic);
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
@@ -83,6 +85,15 @@ public class DashboardActivity extends AppCompatActivity
         imageView = findViewById(R.id.ScorePic);
         imageView.setOnClickListener(this);
 
+
+        navigationView.getBackground().setColorFilter(0x80000000, PorterDuff.Mode.MULTIPLY);
+        navigationView.setItemTextColor(ColorStateList.valueOf(Color.WHITE));
+        navigationView.setItemIconTintList(null);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
         final Animation myAnim = AnimationUtils.loadAnimation(this, R.anim.bounce);
 
         // Use bounce interpolator with amplitude 0.2 and frequency 20
@@ -97,11 +108,7 @@ public class DashboardActivity extends AppCompatActivity
         myAnim.setInterpolator(interpolator);
         scoreButton.startAnimation(myAnim);
 
-        navigationView.getBackground().setColorFilter(0x80000000, PorterDuff.Mode.MULTIPLY);
-        navigationView.setItemTextColor(ColorStateList.valueOf(Color.WHITE));
-        navigationView.setItemIconTintList(null);
     }
-
 
     @Override
     public void onClick(View v) {

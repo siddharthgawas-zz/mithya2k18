@@ -89,6 +89,8 @@ public class DAY1 extends Fragment implements ValueEventListener {
             schedule.add((Map<String,Object>)snapshot.getValue());
         schedule = EventFilter.getEventsBetweenTime(d1,d2,schedule);
         schedule = EventFilter.sort(schedule);
+        if(getContext() == null)
+            return;
         ScheduleAdapter scheduleAdapter = new ScheduleAdapter(getContext(),R.layout.schedule_item
         ,schedule);
         ListView listView = getView().findViewById(R.id.day1_list);

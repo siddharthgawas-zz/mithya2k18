@@ -72,17 +72,7 @@ public class EventAdapter extends BaseAdapter {
 
                             final Uri uri2 = uri;
                             Picasso.get().load(uri).networkPolicy(NetworkPolicy.OFFLINE)
-                                    .into(imageView, new Callback() {
-                                        @Override
-                                        public void onSuccess() {
-
-                                        }
-
-                                        @Override
-                                        public void onError(Exception e) {
-                                            Picasso.get().load(uri2).into(imageView);
-                                        }
-                                    });
+                                    .into(imageView);
                         }
                     });
 

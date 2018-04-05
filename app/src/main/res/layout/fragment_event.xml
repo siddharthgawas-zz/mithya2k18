@@ -12,10 +12,11 @@
         android:id="@+id/gridview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:verticalSpacing="1dp"
-        android:horizontalSpacing="1dp"
+        android:verticalSpacing="7dp"
+        android:horizontalSpacing="7dp"
         android:stretchMode="columnWidth"
         android:numColumns="auto_fit"
+        android:layout_margin="7dp"
         />
 
 </FrameLayout>

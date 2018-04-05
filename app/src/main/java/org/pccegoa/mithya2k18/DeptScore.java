@@ -75,7 +75,7 @@ public class DeptScore extends AppCompatActivity implements ValueEventListener {
                 data.setValueTextColor(Color.BLACK);
                 ScoreChart.setData(data);
                 set.setValueFormatter(new LargeValueFormatter());
-                ScoreChart.getDescription().setEnabled(false);
+                ScoreChart.getDescription().setText("*Click for detailed scores");
                 ScoreChart.setHoleRadius(5);
                 ScoreChart.setExtraBottomOffset(25);
                 ScoreChart.animateY(1250, Easing.EasingOption.EaseInOutCirc);
@@ -83,7 +83,7 @@ public class DeptScore extends AppCompatActivity implements ValueEventListener {
                 ScoreChart.setTransparentCircleAlpha(0);
                 Legend legend = ScoreChart.getLegend();
                 legend.setFormSize(20);
-                legend.setPosition(Legend.LegendPosition.BELOW_CHART_LEFT);
+                legend.setPosition(Legend.LegendPosition.BELOW_CHART_CENTER);
                 legend.setYEntrySpace(10);
                 ScoreChart.setOnChartValueSelectedListener(new OnChartValueSelectedListener() {
                     @Override

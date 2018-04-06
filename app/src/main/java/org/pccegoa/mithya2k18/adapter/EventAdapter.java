@@ -1,6 +1,7 @@
 package org.pccegoa.mithya2k18.adapter;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.support.v7.graphics.Palette;
@@ -61,27 +62,10 @@ public class EventAdapter extends BaseAdapter {
         final ImageView imageView = view.findViewById(R.id.eventImage);
         TextView eventNameTextView = view.findViewById(R.id.eventName);
         eventNameTextView.setText((String)events.get(position).get("event_name"));
-        String fileId = ((String) events.get(position).get("image"))+".jpg";
-        StorageReference reference = FirebaseStorage.getInstance().getReference();
-        try
-        {
-            reference.child("images/"+fileId).getDownloadUrl().addOnSuccessListener(
-                    new OnSuccessListener<Uri>() {
-                        @Override
-                        public void onSuccess(Uri uri) {
-
-                            final Uri uri2 = uri;
-                            Picasso.get().load(uri).networkPolicy(NetworkPolicy.OFFLINE)
-                                    .into(imageView);
-                        }
-                    });
-
-        }
-        catch ( java.util.concurrent.RejectedExecutionException e)
-        {
-            return view;
-        }
-
+        String fileId = ((String) events.get(position).get("image"));
+        Resources resources=mContext.getResources();
+        final int resourceId =resources.getIdentifier("event"+fileId, "drawable",mContext.getPackageName());
+        imageView.setImageResource(resourceId);
         return view;
     }
 

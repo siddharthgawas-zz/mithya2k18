@@ -54,6 +54,7 @@
             android:parentActivityName=".DashboardActivity">></activity>
         <activity android:name=".DeptScore"
             android:label="Score"
+            android:parentActivityName=".DashboardActivity"
             android:screenOrientation="portrait"/>
         <activity android:name=".ScheduleActivity"
             android:screenOrientation="portrait"

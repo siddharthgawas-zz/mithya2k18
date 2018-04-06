@@ -273,7 +273,7 @@
         android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp"
         android:textColor="@color/secondaryTextColor"
-        android:text="NOTE: The JOKER must be played on either an ACE or a KING events only."/>
+        android:text="NOTE: The JOKER must be played on either an ACE or a KING event only."/>
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/jokerPoints"
@@ -401,7 +401,7 @@
                 android:layout_weight="0.75"
                 android:layout_height="40dp"
                 android:textSize="10sp"
-                android:text="NEGATIVE of Double the Maximum Possible Points for the Event "
+                android:text="NEGATIVE of the Maximum Possible Points for the Event "
                 android:gravity="center"/>
         </LinearLayout>
     </android.support.constraint.ConstraintLayout>

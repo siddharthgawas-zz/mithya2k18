@@ -208,7 +208,7 @@ public class DashboardActivity extends AppCompatActivity
         int itScore = counter.getTotalScoreOf(ScoreCounter.IT);
         int etcScore = counter.getTotalScoreOf(ScoreCounter.ETC);
         setPositions(compScore,mechScore,itScore,etcScore);
-        handleSameScoreSituation();
+
 
     }
 
@@ -216,10 +216,10 @@ public class DashboardActivity extends AppCompatActivity
     {
         if(comp == 0 && mech == 0 && it == 0 && etc == 0)
         {
-            firstImageView.setVisibility(View.GONE);
-           secondImageView.setVisibility(View.GONE);
-            thirdImageView.setVisibility(View.GONE);
-            lastImageView.setVisibility(View.GONE);
+            firstImageView.setImageResource(R.drawable.ic_like);
+            secondImageView.setImageResource(R.drawable.ic_like);
+            thirdImageView.setImageResource(R.drawable.ic_like);
+            lastImageView.setImageResource(R.drawable.ic_like);
             return;
         }
         firstImageView.setVisibility(View.VISIBLE);
@@ -239,6 +239,7 @@ public class DashboardActivity extends AppCompatActivity
        TextView scoreTextView = findViewById(R.id.firstScore);
        placeTextView.setText(score.first);
        scoreTextView.setText(score.second+"");
+       firstImageView.setImageDrawable(getResources().getDrawable(R.drawable.ic_first_trophy));
 
         score = getMaxScore(scores);
         scores.remove(score);
@@ -246,6 +247,7 @@ public class DashboardActivity extends AppCompatActivity
         scoreTextView = findViewById(R.id.secondScore);
         placeTextView.setText(score.first);
         scoreTextView.setText(score.second+"");
+        secondImageView.setImageDrawable(getResources().getDrawable(R.drawable.ic_second_trophy));
 
         score = getMaxScore(scores);
         scores.remove(score);
@@ -253,6 +255,7 @@ public class DashboardActivity extends AppCompatActivity
         scoreTextView = findViewById(R.id.thirdScore);
         placeTextView.setText(score.first);
         scoreTextView.setText(score.second+"");
+        thirdImageView.setImageDrawable(getResources().getDrawable(R.drawable.ic_third_trophy));
 
         score = getMaxScore(scores);
         scores.remove(score);
@@ -260,7 +263,8 @@ public class DashboardActivity extends AppCompatActivity
         scoreTextView = findViewById(R.id.forthScore);
         placeTextView.setText(score.first);
         scoreTextView.setText(score.second+"");
-
+        lastImageView.setImageDrawable(getResources().getDrawable(R.drawable.ic_like));
+        handleSameScoreSituation();
     }
 
     private void handleSameScoreSituation()

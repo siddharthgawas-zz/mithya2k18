@@ -10,7 +10,7 @@ import android.widget.ImageButton;
 
 public class AboutActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private final static Uri mInstagramUri = Uri.parse("http://instagram.com/_u/mithya2k17");
+    private final static Uri mInstagramUri = Uri.parse("http://instagram.com/_u/pccemithya");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

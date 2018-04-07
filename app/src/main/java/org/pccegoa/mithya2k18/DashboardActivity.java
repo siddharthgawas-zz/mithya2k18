@@ -239,7 +239,7 @@ public class DashboardActivity extends AppCompatActivity
        TextView scoreTextView = findViewById(R.id.firstScore);
        placeTextView.setText(score.first);
        scoreTextView.setText(score.second+"");
-       firstImageView.setImageDrawable(getResources().getDrawable(R.drawable.ic_first_trophy));
+       firstImageView.setImageDrawable(getResources().getDrawable(R.drawable.ic_first));
 
         score = getMaxScore(scores);
         scores.remove(score);
@@ -247,7 +247,7 @@ public class DashboardActivity extends AppCompatActivity
         scoreTextView = findViewById(R.id.secondScore);
         placeTextView.setText(score.first);
         scoreTextView.setText(score.second+"");
-        secondImageView.setImageDrawable(getResources().getDrawable(R.drawable.ic_second_trophy));
+        secondImageView.setImageDrawable(getResources().getDrawable(R.drawable.ic_second));
 
         score = getMaxScore(scores);
         scores.remove(score);
@@ -255,7 +255,7 @@ public class DashboardActivity extends AppCompatActivity
         scoreTextView = findViewById(R.id.thirdScore);
         placeTextView.setText(score.first);
         scoreTextView.setText(score.second+"");
-        thirdImageView.setImageDrawable(getResources().getDrawable(R.drawable.ic_third_trophy));
+        thirdImageView.setImageDrawable(getResources().getDrawable(R.drawable.ic_third));
 
         score = getMaxScore(scores);
         scores.remove(score);

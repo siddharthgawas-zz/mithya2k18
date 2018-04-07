@@ -20,7 +20,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:src="@drawable/background_dashboard"
+        app:srcCompat="@drawable/background_dashboard"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -41,7 +41,6 @@
         android:clickable="true"
         android:focusable="true"
         android:scaleType="centerInside"
-        android:src="@drawable/icon1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -64,7 +63,6 @@
         android:focusable="true"
         android:onClick="onClickEvent"
         android:scaleType="centerInside"
-        android:src="@drawable/icon3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -85,7 +83,6 @@
         android:clickable="true"
         android:focusable="true"
         android:scaleType="centerInside"
-        android:src="@drawable/icon2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.176"
@@ -176,9 +173,8 @@
                 android:layout_height="40dp"
                 android:layout_gravity="center"
                 android:scaleType="fitCenter"
-                android:layout_marginLeft="12dp"
-                app:srcCompat="@drawable/ic_first_trophy" />
-
+                app:srcCompat="@drawable/ic_first"
+                android:layout_marginLeft="12dp"/>
             <TextView
                 android:id="@+id/firstPlace"
                 android:layout_width="225dp"
@@ -210,10 +206,9 @@
                 android:id="@+id/secondPositionImageView"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                app:srcCompat="@drawable/ic_second"
                 android:layout_gravity="center"
-                android:layout_marginLeft="12dp"
-
-                app:srcCompat="@drawable/ic_second_trophy" />
+                android:layout_marginLeft="12dp" />
 
             <TextView
                 android:id="@+id/secondPlace"
@@ -247,10 +242,8 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginLeft="12dp"
-                android:layout_gravity="center"
-
-                app:srcCompat="@drawable/ic_third_trophy" />
-
+                app:srcCompat="@drawable/ic_third"
+                android:layout_gravity="center"/>
             <TextView
                 android:id="@+id/thirdPlace"
                 android:layout_width="225dp"
@@ -283,8 +276,8 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginLeft="12dp"
-                android:layout_gravity="center"
-                app:srcCompat="@drawable/ic_like" />
+                app:srcCompat="@drawable/ic_like"
+                android:layout_gravity="center" />
 
             <TextView
                 android:id="@+id/forthPlace"

@@ -214,18 +214,29 @@ public class DashboardActivity extends AppCompatActivity
 
     private void setPositions(int comp, int mech, int it, int etc)
     {
+        firstImageView.setVisibility(View.VISIBLE);
+        secondImageView.setVisibility(View.VISIBLE);
+        thirdImageView.setVisibility(View.VISIBLE);
+        lastImageView.setVisibility(View.VISIBLE);
+
         if(comp == 0 && mech == 0 && it == 0 && etc == 0)
         {
             firstImageView.setImageResource(R.drawable.ic_like);
             secondImageView.setImageResource(R.drawable.ic_like);
             thirdImageView.setImageResource(R.drawable.ic_like);
             lastImageView.setImageResource(R.drawable.ic_like);
+            TextView scoreTextView = findViewById(R.id.firstScore);
+            scoreTextView.setText(0+"");
+            scoreTextView = findViewById(R.id.secondScore);
+            scoreTextView.setText(0+"");
+            scoreTextView = findViewById(R.id.thirdScore);
+            scoreTextView.setText(0+"");
+            scoreTextView = findViewById(R.id.forthScore);
+            scoreTextView.setText(0+"");
+
             return;
         }
-        firstImageView.setVisibility(View.VISIBLE);
-        secondImageView.setVisibility(View.VISIBLE);
-        thirdImageView.setVisibility(View.VISIBLE);
-        lastImageView.setVisibility(View.VISIBLE);
+
 
         ArrayList<Pair<String,Integer>> scores = new ArrayList<>();
         scores.add(new Pair<String, Integer>("COMP",comp));

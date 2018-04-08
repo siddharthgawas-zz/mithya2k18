@@ -65,7 +65,7 @@ public class EventAdapter extends BaseAdapter {
         String fileId = ((String) events.get(position).get("image"));
         Resources resources=mContext.getResources();
         final int resourceId =resources.getIdentifier("event"+fileId, "drawable",mContext.getPackageName());
-        imageView.setImageResource(resourceId);
+        Picasso.get().load(resourceId).into(imageView);
         return view;
     }
 

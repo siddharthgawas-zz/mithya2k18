@@ -93,6 +93,8 @@ public class DAY1 extends Fragment implements ValueEventListener {
             return;
         ScheduleAdapter scheduleAdapter = new ScheduleAdapter(getContext(),R.layout.schedule_item
         ,schedule);
+        if(getView()==null)
+            return;
         ListView listView = getView().findViewById(R.id.day1_list);
         listView.setAdapter(scheduleAdapter);
     }
